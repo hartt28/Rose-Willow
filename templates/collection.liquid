@@ -1,0 +1,122 @@
+<div class="o-wrapper">
+<div class="collection-product_intro">
+
+<div>
+{% if collection.image %}
+    <p>{{ collection.image | image_url: width: 400px | image_tag }}</p>
+{% endif %}
+</div>
+
+<div>
+<h1 style="font-family:Lora-Regular;font-size:36px;color:#222;">{{ collection.title }}</h1>
+
+{% if collection.description %}
+    <p style="font-family:OpenSans;font-size:18px;color:#222;line-height:20px;">
+    {{ collection.description }}
+    </p>
+{% endif %}
+
+</div>
+</div>
+
+<div class="collection-panel">
+  <div class="count-panel">{{collection.products_count}} products</div>
+
+  <div class= "filter-panel">
+    <p style="padding-left: 10px;font-family:Lora-Bold;font-size:18px;line-height:14px;color:#222;">
+    Filter by:
+    </p>
+    <div class="filter">
+      {% for tag in collection.all_tags %}
+        {% assign first_char = tag | split:'' | first %}
+        {% unless first_char ==  "_" %}
+          {% if current_tags contains tag %}
+              {% if tag contains "tag_"  %}
+                {% assign completeTag = tag %}
+                {% assign myTag = completeTag | split:"_" | last %}
+                {{myTag}}
+              {% else %}
+                {{ tag | link_to_remove_tag: tag }}
+               {% endif %} 
+            
+          {% else %}
+
+              {% if tag contains "tag_"  %}
+                {% assign completeTag = tag %}
+                {% assign myTag = completeTag | split:"_" | last %}
+                {{myTag | link_to_add_tag: tag}}
+             {% else %}
+                {{ tag | link_to_add_tag: tag }}
+              {% endif %}
+          {% endif %}
+
+        {% endunless %}
+      {% endfor %}
+    </div>
+  </div>
+  <div class="sort-panel"> 
+     <p style="padding-left: 10px;font-family:Lora-Bold;font-size:18px;line-height:14px;color:#222;">
+    Sort by:
+    </p>
+   
+      <form class="sort">
+        <div class="select-wrapper">
+           <select name="sort_by">
+            {% assign sort_by = collection.sort_by | default: collection.default_sort_by %}
+            {% for option in collection.sort_options %}
+                <option value="{{ option.value }}" {% if option.value == sort_by %}selected="selected"{% endif %}>
+                {{ option.name }}
+                 </option>
+            {% endfor %}
+             
+          </select>
+         <svg xmlns="http://www.w3.org/2000/svg" width="8" height="5" viewBox="0 0 8 5">
+              <path fill="#222" fill-rule="evenodd" d="M4 5L0 0h8z"/>
+          </svg>
+        </div>
+        <button>Sort</button>
+   
+      </form>
+    
+  </div>
+</div>
+
+<div class= "collection-product_products">
+
+{% paginate collection.products by 6 %}
+
+    {% for product in collection.products %}
+      
+      {% render 'product-card', product: product %}
+    
+    {% endfor %}
+
+</div>
+
+<div class="pagination">
+
+    {% if paginate.previous.is_link %}
+        <a href="{{ paginate.previous.url }}" class="pagination__prev-next"> << </a>
+    {% endif %}
+    
+    {% for part in paginate.parts %}
+      {% if part.is_link %}
+        <a href="{{ part.url }}" class="pagination__part">
+          {{- part.title -}}
+        </a>
+      {% else %}
+        <span class="pagination__part">
+          {{- part.title -}}
+        </span>
+      {% endif %}
+    {% endfor %}
+
+       
+    {% if paginate.next.is_link %}
+        <a href="{{ paginate.next.url }}" class="pagination__prev-next"> >> </a>
+    {% endif %}
+
+</div>
+{% endpaginate %}
+
+</div>

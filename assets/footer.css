@@ -1,0 +1,120 @@
+.footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+  	align-content: center;
+  	grid-auto-flow: column;
+    border-bottom: 1px solid #d3d3d3; 
+    border-top: 1px solid #d3d3d3;  
+    margin-left: auto;
+  	margin-right: auto;
+	width: 100%;
+  	height: auto;
+}
+
+.footerPart:last-child{
+     border-right:0;    
+}
+
+.footerPart{
+    
+    display: inline-grid;
+    border-right: 1px solid #d3d3d3;
+    margin-left: 10px;
+    
+}
+
+.Newsletter{
+    font-size: 18px;
+}
+@media screen and (max-width: 1024px) {
+    .footer{
+        grid-template-rows: repeat(2,1fr);
+        grid-template-columns: none;
+        text-align: center;
+      }
+
+     .footer>div:first-child{
+        grid-column: 1 / span 2;
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+        
+     }
+     
+
+  
+}
+@media screen and (max-width: 800px) {
+    .footer{
+        display: block;
+        justify-content: center;
+        align-content: center;
+        text-align: left;
+        margin: auto;
+      }
+
+     .footerPart{
+         display: block;
+         border-bottom: 1px solid #ddd;
+         border-right:0px ;
+         max-width: 100%;
+         margin: auto;
+         text-align: center;
+     }
+
+  
+}
+
+
+
+.submitButton{
+    background: white;
+    width: 145px;
+    height: 36px;
+    margin: 20px 0 0 141px;
+    padding: 11px 27px;
+    border: solid 1px #222;
+}
+
+.submitSuccess{
+    color:burlywood;
+    font-size: 16px;
+}
+
+.email_background{
+    border-color: #ddd;
+    border-style: solid;
+    border-width: 0 0 1px 0;
+    padding-bottom: 5px;
+    background: url();
+}
+
+.Sign-up{
+    font-size: 16px;
+}
+
+.AboutUs{
+    font-size: 18px;
+}
+
+.partTwoContent{
+    display: contents;
+    font-size: 16px;
+}
+
+.Forms {
+    width: 1440px;
+    height: 1305px;
+    padding: 50px 110px 65px 50px;
+}
+
+.footer-link {
+    font-size: 16px;
+    margin-right: 1rem;
+}
+
+.rights{
+    text-align:center;
+   
+}
+

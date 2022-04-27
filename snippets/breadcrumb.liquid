@@ -1,0 +1,49 @@
+{% unless template == 'index' %}
+
+    <nav class="breadcrumb" role="navigation" aria-label="breadcrumb">
+       <ol>
+
+        <li>
+          <a href="/" title="Home">Home</a>
+        </li>
+
+      {% case template %}
+
+      {% when 'cart' %}
+        <li>
+          <a href="{{ cart.url }}" aria-current="page">Cart</a>
+        </li>
+
+      {% when 'search' %}
+        <li>
+          <a href="{{ search.url }}" aria-current="page">Search</a>
+        </li>
+
+      {% when 'collection' %}   
+
+        {% if current_tags %}
+          <li>{{ collection.title | link_to: collection.url }}</li>
+
+         <li>
+            {% capture tag_url %}{{ collection.url }}/{{ current_tags | join: "+"}}{% endcapture %}
+            <a href="{{ tag_url }}" aria-current="page">{{ current_tags | join: " + "}}</a>
+        </li>
+
+        {% else %}
+
+          <li>
+            <a href="{{ collection.url }}" aria-current="page">{{ collection.title }}</a>
+          </li>
+
+      {% endif %}
+
+      
+
+
+
+
+    {% endcase %}
+
+     </nav>
+
+{% endunless %}

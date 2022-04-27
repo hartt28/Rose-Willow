@@ -1,0 +1,40 @@
+<div id="searchresults">  
+  <form action="/search" method="get">
+    <p><input type="text" name="q" value="{{search.terms  | escape}}" id="result-q" /> <input type="submit" value="Search" style="width:100px" /></p>
+  </form>
+  
+  {% if search.performed %}
+    
+    {% paginate search.results by 10 %}  
+  
+    {% if search.results == empty %}  
+      <p>Your search for "{{search.terms | escape}}" did not yield any results</p>              
+    {% else %}  
+
+        <ol class = "search-ol">
+        {% for item in search.results %}    
+          <li>
+            {% if item.object_type == 'product' %}
+                {% render 'product-card', product: item %}  
+            {% else %}
+                <a class="result-card" href="{{ item.url }}">
+                  {{ item.title }}
+                </a>
+            {% endif %}
+          </li>
+        {% endfor %}
+        </ol>      
+
+    {% endif %}
+    
+    
+    <p>{{ paginate | default_pagination }}</p>
+    
+    {% endpaginate %}    
+    
+  {% endif %}
+  
+  
+  
+
+</div>

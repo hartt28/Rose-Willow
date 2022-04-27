@@ -1,0 +1,54 @@
+<div class="o-wrapper">
+<a class = "hero_a" href="{{ section.settings.image_link }}">
+  <div class="hero" style="background-image: url({{ section.settings.image | img_url: '768x' }})">
+    {{ section.settings.image | image_url: width: 450, height: 450, crop: 'top' | image_tag: class: 'hero__image' }}
+    <div class="hero_content">
+      <h1>
+      <span>  {{ section.settings.title }}</span>
+      </h1>
+       <span>{{ section.settings.cta }}</span>
+    </div>
+  </div>
+</a>
+</div>
+  
+{% schema %}
+  {
+    "name": "hero",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "url",
+        "id": "image_link",
+        "label": "Image link"
+      },
+      {
+        "type": "url",
+        "id": "hero_link",
+        "label": "Hero Link"
+      },
+      {
+        "type": "text",
+        "id": "cta",
+        "label": "Call to action"
+      }
+    ],
+    "presets": [
+      {
+        "name": "hero",
+        "settings": {
+          "title": "hero title"
+        }
+      }
+    ]
+  }
+{% endschema %}

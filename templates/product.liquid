@@ -1,0 +1,36 @@
+<div class = "product-wrapper">
+
+<div  class = "product-image">
+
+{% for image in product.images %}
+        {{ image | image_url: width: 500 | image_tag}}
+      {% endfor %}
+</div>
+
+<div class = "product-detail">
+
+<h3 class="product-title">
+{{ product.title }}
+</h3>
+<div class="product-detail_price">
+ {% if product.compare_at_price > product.price %}
+          <span class="product_compare_price">{{ product.compare_at_price | money }}</span> 
+          {% endif %}
+          <span>{{ product.price | money }}</span> 
+</div>
+<div class="product-size-discription">
+
+<div class="product-size">
+ {% render 'size_form', product: product %}
+ </div>
+
+<div class="product-description">
+
+{%if product.description%}
+    <p>{{product.description}}</p>
+{% endif %}
+
+</div>
+</div>
+</div>
+</div>

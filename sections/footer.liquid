@@ -1,0 +1,73 @@
+<div class="o-wrapper">
+<div class="footer">
+
+  <div class="footerPart">
+
+    <h2 class="Newsletter">
+      Newsletter
+    </h2>
+
+    <p class="Sign-up">
+      Sign up to receive the latest news and promotions for Rose & Willow.
+    </p>
+
+    {% render 'email_form' %}
+          
+
+
+  </div>
+
+  <div class="footerPart">
+
+    <h2 class="AboutUs">
+      About Us
+    </h2>
+
+    <span class="partTwoContent">
+
+    <p>
+    We are a collective of artisans, intent on making unique pieces that fit personalities. 
+    No two dresses are alike. We only use materials that are well lived in, and well loved in.
+    </p>
+
+    <p>
+    We hope you join us in making the world a place of love and fashion.
+    </p>
+    </span>
+
+  </div>
+
+  <div class="footerPart">
+
+    <p style="font-family: Lora;font-size: 18px;font-weight: bold;"> Navigate </p>
+    {% for link in linklists[section.settings.footer_list].links %}
+      <div><a class="footer-link" href="{{ link.url }}" style="text-decoration:none;
+        color:black;">{{ link.title }}</a></div>
+    {% endfor %}
+      </div>
+  </div>
+
+
+
+<div class = "rights" >
+  <p>@ 2019 Rose &amp; Willow, all rights reserved.</p>
+</div>
+
+</div>
+
+
+
+
+{% schema %}
+{
+  "name": "footer",
+  "tag": "footer",
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "footer_list",
+      "label": "Footer_list"
+    }
+  ]
+}
+{% endschema %}

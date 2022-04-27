@@ -1,0 +1,13 @@
+
+{%- assign form_id = form_id | default: 'Search' -%}
+{%- assign form_class = form_class | prepend: 'form form_search ' -%}
+
+<form class="{{ form_class }}" id="{{ form_id }}" action="{{ routes.search_url }}" method="get" role="search">
+
+  {% assign field_id = form_id | append: '-Query' %}
+
+  <input type="search" name="q" id="{{ field_id }}"
+    value="{{ search.terms | escape }}" class="search_box"  value placeholder="Search"
+  >
+  
+</form>

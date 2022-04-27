@@ -1,0 +1,42 @@
+<div class="o-wrapper">
+<div class = "fav_collection">
+  <h1 class = "fav-collection_title">Our Favorite</h1>
+  <div class = "favorite_part">
+    {% for block in section.blocks %}
+      {% render 'product-card', product: block.settings.fav_dress %}
+    {% endfor %}
+  </div>
+</div>
+</div>
+
+{% schema %}
+{
+"name" :"dresses",
+"class":"fav-collection-wrapper",
+"settings" :[
+    {
+        "type": "text",
+        "id": "favorite_text",
+        "label": "favorite_text"
+      }
+],
+    "blocks": [
+      {
+        "name": "dress",
+        "type": "product",
+        "settings": [
+          {
+            "type": "product",
+            "id": "fav_dress",
+            "label": "favorite dress"
+          }
+        ]
+      }
+],
+  "presets": [
+      {
+        "name": "Favorite Collection"
+      }
+    ]
+  }
+{% endschema %}

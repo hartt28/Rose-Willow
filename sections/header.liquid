@@ -1,0 +1,79 @@
+<div class="o-wrapper">
+<div class="banner">
+
+    <a class="banner__link" href="{{ section.settings.url }}"
+    style="text-decoration:none;color:white;"> {{ section.settings.banner_text }} </a>
+    
+</div>
+
+<div class="header">
+<div class="search">
+      
+        {{ section.settings.search | image_url: width: 36 | image_tag }} 
+        {% render 'search_form' %}
+    </div>
+
+<div class = "logo">
+  <a href="/">
+    {{ section.settings.logo | image_url: width: 300 | image_tag }}
+    </a>
+</div>
+
+<div class="cart">
+
+        <a href="#" data-drawer-trigger aria-controls="drawer-name" aria-expanded="false">
+           {{ section.settings.cart | image_url: width: 36 | image_tag }}
+        </a>
+
+</div>
+</div>
+
+<div class="navigation">
+    {% for link in linklists[section.settings.navigation].links %}
+        <a class="navigation__link" href="{{ link.url }}">{{ link.title }}</a>
+    {% endfor %}
+</div>
+</div>
+
+
+{% schema %}
+    {
+        "name": "Header",
+        "settings": [
+            {
+                "type": "header",
+                "content": "Banner"
+            },
+            {
+                "type": "text",
+                "label": "Banner text",
+                "id": "banner_text"
+            },
+            {
+                "type": "url",
+                "label": "Banner link",
+                "id": "banner_link"
+            },
+            {
+                "type": "image_picker",
+                "label": "Logo image",
+                "id": "logo"
+            },
+              {
+                "type": "image_picker",
+                "label": "Search image",
+                "id": "search"
+            },
+              {
+                "type": "image_picker",
+                "label": "Cart image",
+                "id": "cart"
+            },
+            {
+                "type": "link_list",
+                "label": "Navigation",
+                "id": "navigation"                            
+            }
+        ]
+    }
+{% endschema %}

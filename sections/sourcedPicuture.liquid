@@ -1,0 +1,48 @@
+<div class="o-wrapper">
+<div class="source">
+
+<a href="{{ section.settings.image_link }}">
+{{ section.settings.image | image_url: width: 600 | image_tag: class: 'source__image' }}
+</a>
+
+<div class="source_content"  >
+<h1 class="source_title">Ethically-sourced</h1>
+<p class = "source_p" >We make sure our clothes have a positive  impact on the planet as much as on your wardrobe.</p>
+</div>
+
+</div>
+</div>
+
+
+
+
+{% schema %}
+{
+    "name": "source",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "url",
+        "id": "image_link",
+        "label": "Image link"
+      }],
+      "presets": [
+      {
+        "name": "source",
+        "settings": {
+          "title": "source title"
+        }
+      }
+    ]
+
+}
+{% endschema %}

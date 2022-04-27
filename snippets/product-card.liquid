@@ -1,0 +1,42 @@
+<div class = "productAndTag"> 
+  <div class= "product">
+    <div class="reveal">
+      {% for tag in product.tags %}  
+        {% if tag contains "tag_"  %}
+         <div class="product_tag">
+        {% assign completeTag = tag %}
+        {% assign myTag = completeTag | split:"_" | last %}
+           <div class="product-tag_text"> 
+           {{myTag}}
+            </div>
+        </div>
+    {% endif %}  
+  {% endfor %}
+
+<a href = "{{product.url}}">
+  {{ product.featured_image | image_url: width: 400, height: 400, crop: 'center' | image_tag  }} 
+  <img class="hidden" src="{{ product.images.last | img_url: '400x400' }}" alt="{{ product.images.last.alt | escape }}" />
+  </a>
+</div>
+  <div class="price-title">
+    <h3>
+      <a href = "{{product.url}}" style="text-decoration:none;color:black;">
+        {{ product.title  }}
+      </a>
+    </h3>
+
+    <div class="price">
+    {% if product.compare_at_price > product.price %}
+      <span class="product_compare_price">
+        {{ product.compare_at_price | money }}
+      </span> 
+    {% endif %}
+
+    <span class="product_price">
+      {{ product.price | money }}
+    </span> 
+
+    </div>
+   </div>
+</div>
+</div>

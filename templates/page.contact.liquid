@@ -1,0 +1,25 @@
+<div class="contact">
+    <h1 class="page-title">{{ page.title }}</h1>
+    <p>{{ page.content }}</p>
+    {% if page.handle == "contact-us" %}
+        {% form 'contact', class: 'contact-wrapper' %}
+            <div>
+            <input type="text" required placeholder="{{ 'contact.name' | t }}">
+            <input type="text" placeholder="{{ 'contact.optional_phone' | t }}">
+            </div>
+            <input type="email" required placeholder="{{ 'contact.email' | t }}">
+            <textarea rows="9" required placeholder="{{ 'contact.message' | t }}"></textarea>
+            <div class="contact-button">
+                <button class="addButton" type="submit">{{ 'buttons.send' | t }}</button>
+            </div> 
+
+            {% if form.posted_successfully? %}
+      
+             <p class = "submitSuccess">Send Successfully!</p>
+    
+            {% else %}
+            {{ form.errors | default_errors }}
+            {% endif %}    
+        {% endform %}
+    {% endif %}
+</div>

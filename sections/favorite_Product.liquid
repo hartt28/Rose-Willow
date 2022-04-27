@@ -1,0 +1,51 @@
+<div class="o-wrapper">
+<div class="fav-Product">
+
+    {% assign product = section.settings.product %}    
+
+      <div class="fav-Product_img">
+      {{ product.featured_image | image_url:width:400,height:500 | image_tag: class:'product_img' | link_to: product.url }}
+      </div>
+
+      <div class = "product_content">
+
+        <h1 class="product_title"><a href = "product.url" style="text-decoration:none;color:black;">{{ product.title  }}</a></h1>
+        
+        <div class="product_price">
+        
+          {% if product.compare_at_price > product.price %}
+          <span class="product_compare_price">{{ product.compare_at_price | money }}</span> 
+          {% endif %}
+
+          <span>{{ product.price | money }}</span> 
+        </div>
+
+        {% render 'size_form', product: section.settings.product %}
+        
+      </div>
+</div>
+</div>
+
+
+     
+{% schema %}
+    {
+        "name": "Favorite Product",
+		    "class": "fav-product-wrapper",
+
+        "settings": [
+            {
+              "type": "product",
+              "id": "product",
+              "label": "Product"
+            }
+        ],
+
+        "presets": [
+            {
+                "name": "Favorite Product"
+            }
+        ]
+    }
+    
+{% endschema %}

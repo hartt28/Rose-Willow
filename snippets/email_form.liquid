@@ -1,0 +1,14 @@
+{% form 'customer' %}
+
+<input  name="contact[email]" class = "email_background" type="text" placeholder="Email" required>
+<button  class = "submitButton" type="submit">SUBSCRIBE</button>
+
+{% if form.posted_successfully? %}
+      
+      <p class = "submitSuccess">Subscribed Successfully!</p>
+    
+  {% else %}
+      {{ form.errors | default_errors }}
+  {% endif %}
+
+{%endform%}

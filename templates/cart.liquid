@@ -1,0 +1,70 @@
+<div class="cart-wrapper">
+  <h1>Cart</h1>
+
+
+  {% if cart.item_count == 0 %}
+    <div class="empty_cart">
+    <p>Your cart is empty.</p>
+    <a href="/" title="shopping">Keep shopping</a>
+    </div>
+  {% else %}
+
+  <form action="{{ routes.cart_url }}" method="post" class="cart-form">
+    <div class="cart_title">
+    <p style="grid-column: 1/3;">Product</p>
+    <p>Price</p>
+    <p>Quantity</p>
+    <p style="text-align: right">Total</p>
+    </div>
+        {% for item in cart.items %}
+            <div class="cart-item">
+
+                <div class = "cart-image"> {{ item | image_url: width: 100, height: 100 | image_tag: srcset: nil }}</div>   
+                <div class ="cart-title" style="display: contents;">{{ item.title }}</div> 
+              
+                <div class="cart-item_price">
+                    {{ item.original_line_price | money }}
+                </div>
+
+                <div class="cart-quantity-remove">
+                    <input type="text" name="updates[]" value="{{ item.quantity }}">
+                    <a href="{{ item.url_to_remove }}">Remove</a>
+                </div>
+
+               <div class="cart-total" style="text-align: right">{{item.original_line_price | money }}</div>
+
+
+            </div>
+
+        {% endfor %}
+        <div class="cart_price_tax">
+
+        <div class="cart_price">
+            <div>
+            </div>
+            <p style="grid-column:2"> Subtotal</p>
+            <p style="grid-column:3;text-align:right;"> {{ cart.total_price | money }}</p>
+         </div>
+
+        <div class="cart_tax">
+            <p style="grid-column:2">Taxes</p> 
+            <p style="grid-column:3;text-align:right;">Calculated at checkout</p>
+        </div>
+
+    </div> 
+
+    <div class="cart_update_checkout"> 
+
+        <div class="cart_update"> 
+            <input type="submit" name="update" value="UPDATE">
+        </div>
+
+        <div class="cart_checkout"> 
+            <input type="submit" name="checkout" value="CHECKOUT">
+        </div> 
+
+    </div> 
+    </form>
+
+  {% endif %}
+</div>

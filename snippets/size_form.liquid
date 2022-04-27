@@ -1,0 +1,27 @@
+{% form 'product', product %}
+ 
+
+
+<div class= "sizeTable">
+
+    <div class="sizeText">
+    Size
+    </div>
+
+    <div class="sizes">
+        {% for variant in product.variants %}
+            <div class="size">
+                <input type="radio"  name="id" value="{{variant.id}}" id="{{variant.id}}">
+                <label for="{{variant.id}}">{{ variant.title }}</label>
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="addButtonDiv">
+    <input class = "addButton" type="submit" value="ADD">   
+    </div>
+
+    </div>
+    
+
+{% endform %} 

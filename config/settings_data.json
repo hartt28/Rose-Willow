@@ -1,0 +1,189 @@
+{
+  "current": {
+    "show_breadcrumb_nav": true,
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {
+          "banner_text": "Shop All dresses",
+          "banner_link": "shopify:\/\/collections\/dresses",
+          "logo": "shopify:\/\/shop_images\/A60ED6AE-751F-4536-A09D-6DCE243B65E9.png",
+          "search": "shopify:\/\/shop_images\/search_2x_321a337c-c2ac-4e6c-bf45-c1be0a263eae.png",
+          "cart": "shopify:\/\/shop_images\/cart_2x_1bcae53b-c4bf-4770-a733-9cac48aaebcc.png",
+          "navigation": "main-menu-lenox"
+        }
+      },
+      "slideshow": {
+        "type": "slideshow",
+        "blocks": {
+          "510a5616-f05e-4894-b9ef-bca0993e5600": {
+            "type": "slide",
+            "settings": {
+            }
+          },
+          "ebf3b3c6-afcb-4b24-98e0-1d53b77e13da": {
+            "type": "slide",
+            "settings": {
+            }
+          },
+          "7dd7a871-8994-4d43-af43-6254d5ef8937": {
+            "type": "slide",
+            "settings": {
+            }
+          }
+        },
+        "block_order": [
+          "510a5616-f05e-4894-b9ef-bca0993e5600",
+          "ebf3b3c6-afcb-4b24-98e0-1d53b77e13da",
+          "7dd7a871-8994-4d43-af43-6254d5ef8937"
+        ],
+        "settings": {
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {
+          "footer_list": "footer-lenox"
+        }
+      },
+      "1641578695b95e5280": {
+        "type": "slideshow",
+        "disabled": true,
+        "blocks": {
+          "1641578695b95e5280-0": {
+            "type": "slide",
+            "settings": {
+            }
+          },
+          "f802c61a-98bf-419d-abc0-803830cb9bda": {
+            "type": "slide",
+            "settings": {
+            }
+          },
+          "1641578695b95e5280-1": {
+            "type": "slide",
+            "settings": {
+            }
+          }
+        },
+        "block_order": [
+          "1641578695b95e5280-0",
+          "f802c61a-98bf-419d-abc0-803830cb9bda",
+          "1641578695b95e5280-1"
+        ],
+        "settings": {
+          "title": "",
+          "cta": "",
+          "carousel_autoplay": false,
+          "carousel_dots": false,
+          "carousel_arrows": false,
+          "autoplay_speed": "7000"
+        }
+      },
+      "16415787089cf0acc2": {
+        "type": "slideshow",
+        "blocks": {
+          "16415787089cf0acc2-0": {
+            "type": "slide",
+            "settings": {
+              "slide_img": "shopify:\/\/shop_images\/white-rose-on-soft-pink.jpg"
+            }
+          },
+          "16415787089cf0acc2-1": {
+            "type": "slide",
+            "settings": {
+              "slide_img": "shopify:\/\/shop_images\/the-light-pink-petals-of-a-wilting-rose-against-a-grey-sky.jpg"
+            }
+          },
+          "c8d6ea76-4520-4e4b-b336-67956bbbfcbd": {
+            "type": "slide",
+            "settings": {
+              "slide_img": "shopify:\/\/shop_images\/pink-rose-bloom-centred.jpg"
+            }
+          }
+        },
+        "block_order": [
+          "16415787089cf0acc2-0",
+          "16415787089cf0acc2-1",
+          "c8d6ea76-4520-4e4b-b336-67956bbbfcbd"
+        ],
+        "settings": {
+          "title": "Florals are here",
+          "cta": "Shop All",
+          "carousel_autoplay": true,
+          "carousel_dots": false,
+          "carousel_arrows": false,
+          "autoplay_speed": "1000"
+        }
+      },
+      "16434943062d19798d": {
+        "type": "hero",
+        "disabled": true,
+        "settings": {
+          "title": "Florals are here",
+          "image": "shopify:\/\/shop_images\/purple-flowers.jpg",
+          "image_link": "shopify:\/\/collections",
+          "hero_link": "shopify:\/\/collections",
+          "cta": "Shop All"
+        }
+      },
+      "16434943605836caa7": {
+        "type": "favoriteCollection",
+        "blocks": {
+          "157acd44-abed-4797-a0a4-c5085b6d8f44": {
+            "type": "product",
+            "settings": {
+              "fav_dress": "caroline-dress"
+            }
+          },
+          "855ee087-e4b4-422f-b1bb-0778d7e9733b": {
+            "type": "product",
+            "settings": {
+              "fav_dress": "evelyn-dress"
+            }
+          },
+          "6f075bd2-43fd-4d24-bf49-45efedeaac50": {
+            "type": "product",
+            "settings": {
+              "fav_dress": "flair-dress"
+            }
+          }
+        },
+        "block_order": [
+          "157acd44-abed-4797-a0a4-c5085b6d8f44",
+          "855ee087-e4b4-422f-b1bb-0778d7e9733b",
+          "6f075bd2-43fd-4d24-bf49-45efedeaac50"
+        ],
+        "settings": {
+          "favorite_text": ""
+        }
+      },
+      "1643502991fae86df1": {
+        "type": "sourcedPicuture",
+        "settings": {
+          "title": "Ethically sourced",
+          "image": "shopify:\/\/shop_images\/photo-1496747611176-843222-e-1-e-57-c_2x_fc7f193e-34f6-4ce0-800f-07875a0b74cf.png",
+          "image_link": "shopify:\/\/collections"
+        }
+      },
+      "16436553585a1008f1": {
+        "type": "favorite_Product",
+        "settings": {
+          "product": "madeline-dress"
+        }
+      }
+    },
+    "content_for_index": [
+      "16434943062d19798d",
+      "16415787089cf0acc2",
+      "1641578695b95e5280",
+      "16434943605836caa7",
+      "1643502991fae86df1",
+      "16436553585a1008f1"
+    ]
+  },
+  "presets": {
+    "Default": {
+    }
+  }
+}

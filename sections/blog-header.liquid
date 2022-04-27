@@ -1,0 +1,9 @@
+   <div class="o-wrapper">
+   <span class="article__author">
+       {% if article.tags contains ana%}
+        <p>Ana Smyth</p>
+       {% else %}
+        {{ article.author }}
+       {% endif %}
+      </span>
+    </div>
